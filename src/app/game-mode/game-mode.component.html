@@ -1,0 +1,9 @@
+<label>Enter board size</label>
+<br/>
+<input type="text" placeholder="Enter number of tiles" 
+(input)="onTileChangeHandler($event)"
+>
+
+ <h2 *ngIf="showTileInput">Please enter a valid Number. Number should be a perfect square
+</h2>
+
