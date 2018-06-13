@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import Utils from './utils/utils';
 import {AstarPuzzle} from './game/a-star';
+import {DataLoader} from './data-loader/data-loader';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
   gridColumn = 'repeat(4,100px)';
   gridRow = '100px 100px 100px 100px';
   automation = false;
-  steps; number;
+  steps: any;
 
   constructor() {}
 
@@ -99,24 +100,9 @@ export class AppComponent implements OnInit {
 }
 
 createDummyDateForAutomation() {
-  this.game = [{value: 4, color: 'blue'},
-              {value: 0, color: 'blue'},
-              {value: 6, color: 'blue'},
-              {value: 2, color: 'blue'},
-              {value: 8, color: 'blue'},
-              {value: 1, color: 'blue'},
-              {value: 10, color: 'blue'},
-              {value: 3, color: 'blue'},
-              {value: 12, color: 'blue'},
-              {value: 5, color: 'blue'},
-              {value: 14, color: 'blue'},
-              {value: 7, color: 'blue'},
-              {value: null, color: 'yellow'},
-              {value: 9, color: 'blue'},
-              {value: 13, color: 'blue'},
-              {value: 11, color: 'blue'}
-              ];
 
+  const dataLoader = new DataLoader();
+  this.game = dataLoader.getData();
               this.boardSize = 4;
               this.gridColumn = `repeat(4, 100px)`;
               this.gridRow = '100px 100px 100px 100px';
