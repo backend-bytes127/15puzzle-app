@@ -1,11 +1,12 @@
 import {IMOVE} from './model';
+import {IGAME} from './model';
 
 class Utils {
     private moves: IMOVE;
     private emptyNodeIndex: number;
     private width: number;
     private height: number;
-    game: any;
+    game: IGAME[];
     constructor() {
     }
 
@@ -76,7 +77,6 @@ class Utils {
         // swap values with the empty node
         const emptyNode = this.getCoordinates(this.emptyNodeIndex, this.width);
         const node = this.getCoordinates(currentNodeIndex, this.width);
-        console.log(emptyNode);
         if (emptyNode.row === node.row) {
             if (node.column === emptyNode.column - 1) {
                 const firstIndex = (this.getIndex(node.row, node.column));

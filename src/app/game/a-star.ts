@@ -8,8 +8,15 @@ export class AstarPuzzle {
     childData;
     constructor(node, position) {
         this._node = new PuzzleGameNode(node);
-     //   this._node.setEmptyIndexPosition(position);
     }
+
+    /*
+    For every node the manhattan distance heuristic is calculated.
+    The node with the smallest heuristic is selected for the next move.
+    The node makes sure that the child node is not equal to the parent 
+    configuation. The loop stop once the error is 0 or the system
+    reaches the goal state.
+    */
 
     evaluate() {
         const steps = [];

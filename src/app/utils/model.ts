@@ -5,4 +5,9 @@ export  interface IMOVE {
     RIGHT: boolean;
 }
 
+export interface IGAME {
+    value: number;
+    color?: string;
+}
+
 
